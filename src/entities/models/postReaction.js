@@ -2,6 +2,11 @@ const { Post } = require("../models");
 
 module.exports = (sequelize, DataTypes) => {
   const PostReaction = sequelize.define("PostReaction", {
+    postReactionId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     postId: {
       type: DataTypes.INTEGER,
       references: {

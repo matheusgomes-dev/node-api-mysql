@@ -3,9 +3,7 @@ const { PostReaction } = require("../entities/models");
 module.exports = {
   async getTotalReactionsByPost(postId) {
     try {
-
-        return 50;
-
+      return await PostReaction.count({ where: { postId: postId } });
     } catch (e) {
       throw e;
     }

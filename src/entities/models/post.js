@@ -21,15 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       timestamps: false
-    },
-    {
+    }
+    /* {
       classMethods: {
         associate: function(models) {
-          Post.belongsTo(User, { as: "User", foreignKey: "userId" });
+          Post.hasOne(User, { as: "User", foreignKey: "userId" });
         }
       }
-    }
-  );  
+    } */
+  );
 
   return Post;
 };

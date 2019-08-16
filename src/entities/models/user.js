@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     {
       timestamps: false
     },
-    {
+    /* {
       classMethods: {
         associate: function(models) {
           User.hasMany(Post, { as: 'Posts', foreignKey: 'userId' });
         }
       }
-    }
+    } */
   );
 
   return User;

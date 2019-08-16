@@ -9,6 +9,8 @@ module.exports = {
 
       let posts = await PostService.getPostsFeed(skip);
 
+      const lengthPosts = posts.rows.length;
+
       posts.rows.map(async (item, i) => {
         let user = await UserService.getUserById(item.userId);
 
@@ -21,7 +23,7 @@ module.exports = {
         posts.rows[i].dataValues.totalLikes = await PostReactionService.getTotalReactionsByPost(item.postId);
         posts.rows[i].dataValues.totalComments = 2;
 
-        if (i == posts.count - 1) {
+        if (i == lengthPosts - 1) {
           res.send(posts);
         }
       });
